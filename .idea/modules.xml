@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/firstService/firstService.iml" filepath="$PROJECT_DIR$/backend/firstService/firstService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/volkiSoaLab.iml" filepath="$PROJECT_DIR$/.idea/volkiSoaLab.iml" />
+    </modules>
+  </component>
+</project>

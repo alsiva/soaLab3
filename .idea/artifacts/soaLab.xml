@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="soaLab">
+    <output-path>$PROJECT_DIR$/out/artifacts/soaLab</output-path>
+    <root id="archive" name="soaLab.war" />
+  </artifact>
+</component>
