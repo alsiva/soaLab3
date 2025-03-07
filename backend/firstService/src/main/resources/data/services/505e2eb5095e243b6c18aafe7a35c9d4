@@ -1,0 +1,1 @@
+{"Token":"","Service":{"ID":"firstService-c80dccb04e92d3cae141392a7ba1603b","Service":"firstService","Tags":["contextPath=/firstService"],"Address":"localhost","Meta":{"secure":"false"},"Port":61989,"Weights":{"Passing":1,"Warning":1},"EnableTagOverride":false,"Proxy":{"MeshGateway":{},"Expose":{}},"Connect":{},"CreateIndex":0,"ModifyIndex":0},"Source":"remote"}

@@ -1,0 +1,6 @@
+Собираем image
+docker build -t haproxy .
+
+Запускаем докер контейнер
+docker run -d -p 80:80 --name haproxy haproxy
+

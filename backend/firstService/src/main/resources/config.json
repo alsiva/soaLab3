@@ -1,0 +1,13 @@
+{
+  "verify_incoming": true,
+  "verify_outgoing": true,
+  "addresses": {
+    "https": "0.0.0.0"
+  },
+  "ports": {
+    "http": 8500
+  },
+  "bind_addr": "127.0.0.1",
+  "data_dir": "./data",
+  "advertise_addr": "127.0.0.1"
+}
