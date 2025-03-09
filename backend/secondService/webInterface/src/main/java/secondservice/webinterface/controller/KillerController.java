@@ -54,7 +54,7 @@ public class KillerController {
         try{
             InitialContext ctx = new InitialContext();
             MoveToCaveRemote mover = (MoveToCaveRemote) ctx.lookup(
-                    "java:global/businessLogic/MoveToCaveEJB!secondservice.businesslogic.ejb.MoveToCaveRemote"
+                    "java:global/secondService/MoveToCaveEJB!secondservice.businesslogic.ejb.MoveToCaveRemote"
             );
             boolean res = mover.moveToCave(url, teamId, caveId);
             return Response.ok().build();

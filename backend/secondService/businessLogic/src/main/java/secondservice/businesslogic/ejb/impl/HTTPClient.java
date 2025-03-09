@@ -23,9 +23,8 @@ public class HTTPClient implements HTTPClientLocal {
 
     @Override
     public Response deleteRequest(String url) throws NoSuchAlgorithmException, KeyManagementException {
-        try(Client client = new CustomClient().createClient()) {
-            WebTarget target = client.target(url);
-            return target.request(MediaType.APPLICATION_XML).delete();
-        }
+        Client client = new CustomClient().createClient();
+        WebTarget target = client.target(url);
+        return target.request(MediaType.APPLICATION_XML).delete();
     }
 }

@@ -8,13 +8,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @XmlRootElement(name = "head") // JAXB эквивалент @JacksonXmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DragonHeadDto {
-
+public class DragonHeadDto  implements Serializable {
+    private static final long serialVersionUID = 1L;
     @XmlElement(name = "eyesCount") // JAXB эквивалент @JacksonXmlProperty
     private Long eyesCount;
 }

@@ -20,7 +20,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @XmlRootElement(name = "coordinates") // JAXB эквивалент @JacksonXmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CoordinatesDto{
+public class CoordinatesDto implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Max(value = 411, message = "x must be lower or equal than 411")
     @NotNull(message = "x cannot be null")
     @NotEmpty(message = "x cannot be empty")
