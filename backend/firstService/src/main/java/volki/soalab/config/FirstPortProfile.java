@@ -10,5 +10,6 @@ public class FirstPortProfile implements WebServerFactoryCustomizer<Configurable
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
         factory.setPort(8181);
+        System.setProperty("spring.cloud.consul.discovery.service-name", "firstPort");
     }
 }

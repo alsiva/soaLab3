@@ -41,8 +41,8 @@ public class CustomClient {
         // Создаем клиента с использованием настроенного SSLContext
         return ClientBuilder.newBuilder()
                 .sslContext(sslContext) // Устанавливаем SSLContext
-                .property("jersey.config.client.connectTimeout", 500000)  // Таймаут на подключение
-                .property("jersey.config.client.readTimeout", 1000000)   // Таймаут на чтение
+                .property("jersey.config.client.connectTimeout", 50000000)  // Таймаут на подключение
+                .property("jersey.config.client.readTimeout", 100000000)   // Таймаут на чтение
                 .build();
     }
 }

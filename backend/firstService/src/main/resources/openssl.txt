@@ -1,0 +1,28 @@
+Создание приватного ключа
+openssl genpkey -algorithm RSA -out private_key.pem -aes256 -pkeyopt rsa_keygen_bits:2048
+
+Запрос на сертификат
+openssl req -new -key private_key.pem -out certificate.pem -subj "/CN=Alexey Ivanov/OU=Volki Department/O=Volki Corp/L=SPB/ST=SPB/C=RU"
+
+Создание самоподписанного сертификата
+openssl x509 -req -in certificate.pem -signkey private_key.pem -out certificate.pem -days 365
+
+Создание keystore в формате p12
+openssl pkcs12 -export -inkey private_key.pem -in certificate.pem -out keystore.p12 -name mykey
+
+Создание truststore в формате p12
+openssl pkcs12 -export -nokeys -in certificate.pem -out truststore.p12
+
+Запуск consul
+consul agent -dev -config-file=config.json
+
+Проверка truststore
+keytool -list -keystore truststore.p12 -storepass changeit -storetype PKCS12
+
+trust
+A8:4B:D2:B1:BC:E5:62:2B:97:A0:18:8C:9B:6C:7A:10:41:6E:5F:E1:4D:54:77:2E:4E:31:3A:94:8C:1F:8B:9F
+cert
+A8:4B:D2:B1:BC:E5:62:2B:97:A0:18:8C:9B:6C:7A:10:41:6E:5F:E1:4D:54:77:2E:4E:31:3A:94:8C:1F:8B:9F
+
+Положить сертификат в хранилище
+keytool -import -alias consul -file consul.pem -keystore keystore.p12 -storetype PKCS12 -storepass changeit

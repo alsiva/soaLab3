@@ -18,13 +18,17 @@ public class HTTPClient implements HTTPClientLocal {
     public Response getRequest(String url) throws NoSuchAlgorithmException, KeyManagementException {
         Client client = new CustomClient().createClient();
         WebTarget target = client.target(url);
-        return target.request(MediaType.APPLICATION_XML).get();
+        return target.request(MediaType.APPLICATION_XML)
+                .header("Connection", "close")
+                .get();
     }
 
     @Override
     public Response deleteRequest(String url) throws NoSuchAlgorithmException, KeyManagementException {
         Client client = new CustomClient().createClient();
         WebTarget target = client.target(url);
-        return target.request(MediaType.APPLICATION_XML).delete();
+        return target.request(MediaType.APPLICATION_XML)
+                .header("Connection", "close")
+                .delete();
     }
 }
