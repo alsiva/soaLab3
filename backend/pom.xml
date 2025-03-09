@@ -8,7 +8,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>/firstService</module>
-        <module>/secondService</module>
+        <module>/secondService/businessLogic</module>
+        <module>/secondService/webInterface</module>
     </modules>
 
     <dependencyManagement>
