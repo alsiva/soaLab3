@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/~s268819/dist/',
+  //base: '/~s268819/dist/',
   //base: '/myapp/',
   plugins: [
     vue(),
