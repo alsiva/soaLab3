@@ -10,6 +10,6 @@ public class SecondPortProfile implements WebServerFactoryCustomizer<Configurabl
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
         factory.setPort(8282);
-        System.setProperty("spring.cloud.consul.discovery.service-name", "secondPort");
+        System.setProperty("spring.cloud.consul.discovery.service-name", "firstService");
     }
 }

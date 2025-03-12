@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  consul:
+    image: hashicorp/consul:latest
+    container_name: consul
+    ports:
+      - "8500:8500"    # Web UI и HTTP API
+      - "8600:8600/udp" # DNS для service discovery
+      - "8600:8600"    # DNS для TCP (если требуется)
+      - "8300:8300"    # Серверный RPC
+      - "8301:8301"    # Сервер-сервер (LAN)
+      - "8302:8302"    # Сервер-сервер (WAN)
+      - "8400:8400"    # RPC API (опционально)
+      - "8601:8601"    # Серверная телеметрия (опционально)
+    command: ["agent", "-server", "-ui", "-bootstrap-expect=1", "-client=0.0.0.0"]
+
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    ports:
+      - "81:80"    # HTTP
+      - "82:81"
+      - "1703:1703"
+      - "443:443"  # HTTPS (если требуется)
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - consul
