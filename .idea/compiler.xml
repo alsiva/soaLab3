@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="firstService" />
-        <module name="secondService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="secondService" target="17" />
       <module name="soaLab" target="21" />
     </bytecodeTargetLevel>
   </component>

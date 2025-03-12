@@ -14,7 +14,7 @@ import javax.naming.InitialContext;
 @Path("/killer")
 public class KillerController {
 
-    private final String url = "http://localhost:81/firstService";
+    private final String url = "https://localhost:81/firstService";
 
     @GET
     @Path("/pelmeni")
